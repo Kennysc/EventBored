@@ -1,7 +1,7 @@
  *{
- 	font-family: "Comic Sans MS";
+ 	font-family: "Verdana";
  }
-#main_content {
+body {
 	background-image:url("./EventBored_Background.png");
 }
  .container {
