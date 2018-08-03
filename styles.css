@@ -4,6 +4,12 @@
 body {
 	background-image:url("./EventBored_Background.png");
 }
+
+.nav_bar {
+	background-color: white;
+	font-size: 22px;
+}
+
  .container {
  	display: flex;
  	justify-content: flex-start;
@@ -36,6 +42,7 @@ textarea {
     background-color: white;
     resize: none;
 }
+
 form {
 	background: white;
 }
