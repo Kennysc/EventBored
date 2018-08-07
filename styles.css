@@ -1,5 +1,5 @@
  *{
- 	font-family: "Verdana";
+ 	font-family: "Constantia";
  }
 body {
 	background-image:url("./EventBored_Background.png");
@@ -55,4 +55,5 @@ input[type=text] {
 
 h1 {
 	text-decoration: underline;
+	color:red;
 }
