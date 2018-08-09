@@ -1,0 +1,87 @@
+<!Doctype html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>EventBored</title>
+      <link href="./styles.css" type="text/css" rel="stylesheet">
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    </head>
+  <body>
+    <script>
+    $(document).ready(function() {
+      $("#comment").on('submit', function(e) {
+        e.preventDefault();
+
+        var form = $(this)
+        console.log(form)
+
+        $.ajax({
+          type: "POST", 
+          url: '/comment', 
+          data: form.serialize(),
+          success: function(data) {
+            console.log('success')
+          }
+
+        })
+      })
+
+
+      
+        $.ajax({
+          type: "GET",
+          url: '/allcomments',
+          success: function(data) {
+            console.log('success')
+            var element = $('#allcomments')
+            var data = data 
+            data.forEach(function(item) {
+              console.log(item)
+              var newElement = $('<p> Name' + item.name + '/n <p> Description' + item.description)
+              console.log(newElement)
+              element.append(newElement)
+            })
+
+            $("body").append(element)
+
+
+            
+          }
+        })
+     
+    });
+    </script>
+  	<div>
+  		<a href="./index.html">
+      <img src="./EventBored_Title.png"><!-- TITLE -->
+    </a>
+
+     <div class="Box">
+       <div class="nav_bar"> <!-- navigation bar -->
+        <ul>
+          <li><a href="./about_us.html">About Us</a></li>
+          <li><a href="./contact_page.html">Contact Us</a> </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+    <h1> Home </h1>
+    <h2> Instructions</h2>
+    <p> With EventBored you could comment nearby events to gather people to see if they want to  participate
+     as well.<br> Use our search bar to navigate through our website and search for specific events or parts in our website.<br> Read our about us to find to find out about our team of web designers and our mission statement for the making of our website.<br> Go to our contact page to reach out to us if you have any questions via e-mail or phone.</p>
+  		<div class="container">
+  				<h2>Events</h2>
+  				<form id='comment'> Name: 
+            <input type="text" name="name">
+						<textarea name="description" placeholder="Enter text here...">
+            </textarea>
+ 					<input type="submit">
+				</form>
+	    </div>
+      <div class='allcomments'>
+      </div>
+  </div>
+</div>
+  </body>
+</html>
