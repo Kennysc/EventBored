@@ -7,7 +7,14 @@ var cors = require('cors');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var commentscontroller = require('./controllers/comments_controller.js');
+
 mongoose.connect(`mongodb://admin:eventbored2018@ds235418.mlab.com:35418/eventbored`)
+  .then(
+  ()=>{
+    console.log("connected to mongoDB")},
+  (err)=>{
+     console.log("err",err);
+   })
 
 // serving static assets
 app.use(express.static(path.join(__dirname, '/views')));
