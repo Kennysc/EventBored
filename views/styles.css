@@ -33,6 +33,19 @@ a {
  	padding: 15px;
  }
 
+ .allcomments {
+ 	display: flex;
+ 	justify-content: flex-start;
+ 	flex-direction: column;
+ 	margin-right: 450px;
+ 	margin-left: 50px;
+ 	margin-top: 20px;
+ 	margin-bottom: 10px;
+ 	border: 2px solid black;
+ 	background-color: white;
+ 	padding: 15px;
+ }
+
  .Box {
  	display: flex;
  	justify-content: flex-start;
